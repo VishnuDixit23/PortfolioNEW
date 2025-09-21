@@ -94,22 +94,20 @@ export const myProjects = [
       },
     ],
   },
-  {
-    title: 'MoodSync - Mini Mood Tracker',
-    desc: 'A lightweight and intuitive mood tracking application built for quick emotional logging and self-awareness. Users can easily select and record their daily mood with just a tap, encouraging mindful habits.',
+{
+    title: 'GTA 6 Landing Page',
+    desc: 'A modern, responsive landing page for GTA 6, featuring dynamic GSAP animations and scroll effects. The hero section reveals the logo through a captivating masking effect as the user scrolls, creating a truly immersive experience.',
     subdesc:
-      'MoodSync leverages modern frontend tools like React and Vite to deliver a clean, responsive user interface that works seamlessly across devices.',
-    href: 'https://mood-tracker-w5lu.vercel.app/',
-    texture: '/textures/project/project3.mp4',
-    logo: '/assets/mood.png',
+      'This project showcases advanced frontend skills using React, GSAP, Tailwind CSS, and Vite to build a high-performance, responsive web page.',
+    href: 'https://gta-6-landing-page-bffc.vercel.app/',
+    texture: '/textures/project/project5.mp4', // assuming you have a video for this
+    logo: '/assets/gta6-logo.jpg', // assuming you have a logo asset for this
     logoStyle: {
-      backgroundColor: '#60f5a1',
-      background:
-        'linear-gradient(0deg, #60F5A150, #60F5A150), linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(208, 213, 221, 0.8) 100%)',
-      border: '0.2px solid rgba(208, 213, 221, 1)',
-      boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
+      backgroundColor: '#2A1816',
+      border: '0.2px solid #36201D',
+      boxShadow: '0px 0px 60px 0px #AA3C304D',
     },
-    spotlight: '/assets/spotlight3.png',
+    spotlight: '/assets/gta6-spotlight.jpg', // assuming you have a spotlight image for this
     tags: [
       {
         id: 1,
@@ -123,13 +121,13 @@ export const myProjects = [
       },
       {
         id: 3,
-        name: 'Next js',
-        path: '/assets/nextjs.svg',
+        name: 'GSAP',
+        path: '/assets/gsap.jpg', // assuming you have a GSAP logo
       },
       {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'Vite',
+        path: '/assets/vite.svg',
       },
     ],
   },
@@ -203,7 +201,14 @@ export const skills = [
     icon: '/assets/generative.png',
     level: 'AI Integration',
     animation: 'Thinking',
-    description: 'Prompt engineering and building tools using OpenAI & vector databases.',
+    description: ' Langchain and building tools using LLMs & vector databases.',
+  },
+   {
+    name: 'Agentic AI',
+    icon: '/assets/generative.png',
+    level: 'AI Integration',
+    animation: 'Thinking',
+    description: 'Building AI agents, RAG applications using langgraph, langsmith, langflow.',
   },
   {
     name: 'JavaScript / TypeScript',
@@ -212,19 +217,36 @@ export const skills = [
     animation: 'Typing',
     description: 'Writing modern, type-safe, maintainable code.',
   },
+
   {
-    name: 'MongoDB / PostgreSQL',
-    icon: '/assets/mongodb.svg',
-    level: 'Database',
-    animation: 'Walk',
-    description: 'Schema design, query optimization, and integrations.',
-  },
-  {
-    name: 'THREE.js/ Framer Motion/ Tailwind CSS',
+    name: 'THREE.js',
     icon: '/assets/three.svg',
     level: 'UI/UX & Animation',
     animation: 'Jump',
     description: 'Sleek UI designs with interactive 3D & animations.',
   },
+   {
+    name: 'GSAP',
+    icon: '/assets/gsap.jpg',
+    level: 'Animation Framework',
+    animation: 'Walk',
+    description: 'Scroll-Based animations , Immersive Ui experience..',
+  },
+   {
+  name: "Tailwind CSS",
+  icon: "assets/tailwindcss.png",
+  level: "UI/UX & Animation",
+  animation: "SlideIn",
+  description: "A utility-first CSS framework for rapidly building custom user interfaces."
+},
+    {
+    name: 'MongoDB ',
+    icon: '/assets/mongodb.svg',
+    level: 'Database',
+    animation: 'Walk',
+    description: 'Schema design, query optimization, and integrations.',
+  },
+  
+
  
 ];

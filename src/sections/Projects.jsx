@@ -1,99 +1,123 @@
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
-import { Suspense, useState } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { Center, OrbitControls } from '@react-three/drei';
+import { useRef } from 'react';
 
 import { myProjects } from '../constants/index.js';
-import CanvasLoader from '../components/Loading.jsx';
-import DemoComputer from '../components/DemoComputer.jsx';
 
-const projectCount = myProjects.length;
+gsap.registerPlugin(ScrollTrigger);
 
 const Projects = () => {
-  const [selectedProjectIndex, setSelectedProjectIndex] = useState(0);
-
-  const handleNavigation = (direction) => {
-    setSelectedProjectIndex((prevIndex) => {
-      if (direction === 'previous') {
-        return prevIndex === 0 ? projectCount - 1 : prevIndex - 1;
-      } else {
-        return prevIndex === projectCount - 1 ? 0 : prevIndex + 1;
-      }
-    });
-  };
+  const sectionRef = useRef(null);
 
   useGSAP(() => {
-    gsap.fromTo(`.animatedText`, { opacity: 0 }, { opacity: 1, duration: 1, stagger: 0.2, ease: 'power2.inOut' });
-  }, [selectedProjectIndex]);
+    gsap.from('.projects-label', {
+      y: 16,
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '#projects', start: 'top 80%' },
+    });
 
-  const currentProject = myProjects[selectedProjectIndex];
+    gsap.from('.projects-heading', {
+      y: 24,
+      opacity: 0,
+      duration: 0.7,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '#projects', start: 'top 78%' },
+    });
+
+    gsap.from('.project-card-item', {
+      y: 48,
+      opacity: 0,
+      duration: 0.7,
+      stagger: 0.12,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '.projects-grid', start: 'top 75%' },
+    });
+  }, { scope: sectionRef });
 
   return (
-    <section className="c-space my-20">
-      <p className="head-text">My Selected Work</p>
+    <section className="c-space py-24" id="projects" ref={sectionRef}>
+      {/* Section Header */}
+      <div className="mb-16">
+        <p className="projects-label section-label">Work</p>
+        <h2 className="projects-heading section-heading">Selected projects.</h2>
+        <p className="projects-heading section-subheading">
+          A few things I've built that I'm proud of.
+        </p>
+      </div>
 
-      <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
-        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
-          <div className="absolute top-0 right-0">
-            <img src={currentProject.spotlight} alt="spotlight" className="w-full h-96 object-cover rounded-xl" />
-          </div>
+      {/* Project Grid */}
+      <div className="projects-grid grid lg:grid-cols-2 grid-cols-1 gap-6">
+        {myProjects.map((project, index) => (
+          <div key={index} className="project-card-item">
+            <div className="project-card">
+              {/* Media */}
+              <div className="project-card-media">
+                <video
+                  src={project.texture}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  preload="metadata"
+                />
+              </div>
 
-          <div className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg" style={currentProject.logoStyle}>
-            <img className="w-10 h-10 shadow-sm" src={currentProject.logo} alt="logo" />
-          </div>
-
-          <div className="flex flex-col gap-5 text-white-600 my-5">
-            <p className="text-white text-2xl font-semibold animatedText">{currentProject.title}</p>
-
-            <p className="animatedText">{currentProject.desc}</p>
-            <p className="animatedText">{currentProject.subdesc}</p>
-          </div>
-
-          <div className="flex items-center justify-between flex-wrap gap-5">
-            <div className="flex items-center gap-3">
-              {currentProject.tags.map((tag, index) => (
-                <div key={index} className="tech-logo">
-                  <img src={tag.path} alt={tag.name} />
+              {/* Content */}
+              <div className="project-card-content">
+                {/* Logo */}
+                <div className="project-card-logo" style={project.logoStyle}>
+                  <img src={project.logo} alt={project.title} />
                 </div>
-              ))}
+
+                {/* Title */}
+                <h3 className="project-card-title">{project.title}</h3>
+
+                {/* Description */}
+                <p className="project-card-desc">{project.desc}</p>
+
+                {/* Tags */}
+                <div className="project-card-tags">
+                  {project.tags.map((tag) => (
+                    <span key={tag.id} className="project-tag">
+                      <img src={tag.path} alt={tag.name} />
+                      {tag.name}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Links */}
+                <div className="flex items-center gap-3 pt-2">
+                  <a
+                    className="project-card-link"
+                    href={project.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Live Demo
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="7" y1="17" x2="17" y2="7" />
+                      <polyline points="7 7 17 7 17 17" />
+                    </svg>
+                  </a>
+                  {project.github && (
+                    <a
+                      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-medium text-neutral-300 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/20 transition-all duration-200"
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <img src="/assets/github.svg" alt="GitHub" className="w-3.5 h-3.5 opacity-70" />
+                      Source Code
+                    </a>
+                  )}
+                </div>
+              </div>
             </div>
-
-            <a
-              className="flex items-center gap-2 cursor-pointer text-white-600"
-              href={currentProject.href}
-              target="_blank"
-              rel="noreferrer">
-              <p>Check Live Site</p>
-              <img src="/assets/arrow-up.png" alt="arrow" className="w-3 h-3" />
-            </a>
           </div>
-
-          <div className="flex justify-between items-center mt-7">
-            <button className="arrow-btn" onClick={() => handleNavigation('previous')}>
-              <img src="/assets/left-arrow.png" alt="left arrow" />
-            </button>
-
-            <button className="arrow-btn" onClick={() => handleNavigation('next')}>
-              <img src="/assets/right-arrow.png" alt="right arrow" className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-
-        <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
-          <Canvas>
-            <ambientLight intensity={Math.PI} />
-            <directionalLight position={[10, 10, 5]} />
-            <Center>
-              <Suspense fallback={<CanvasLoader />}>
-                <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
-                  <DemoComputer texture={currentProject.texture} />
-                </group>
-              </Suspense>
-            </Center>
-            <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
-          </Canvas>
-        </div>
+        ))}
       </div>
     </section>
   );

@@ -9,9 +9,18 @@ export const navLinks = [
     name: 'About',
     href: '#about',
   },
-
+  {
+    id: 3,
+    name: 'Projects',
+    href: '#projects',
+  },
   {
     id: 4,
+    name: 'Skills',
+    href: '#resume',
+  },
+  {
+    id: 5,
     name: 'Contact',
     href: '#contact',
   },
@@ -21,12 +30,13 @@ export const navLinks = [
 
 export const myProjects = [
   {
-    title: 'Trainify - AI Workout Assitance',
-    desc: 'Trainify is a revolutionary Software that helps in generating Workout and diet plans according to the user needs with the help of artificial intelligence , it also gives the option to make our own customised workout and track our journey.',
+    title: 'Trainify - AI Workout & Diet Platform',
+    desc: 'Developed a full-stack fitness platform that generates personalized workout and diet plans based on user goals, fitness level, and training preferences.',
     subdesc:
-      'Built as a unique Software with Next.js 14, Tailwind CSS, TypeScript, Framer Motion and Gemini,MongoDB is designed for optimal performance and scalability.',
-    href: 'https://www.linkedin.com/posts/vishnu-dixit-b3815729a_fitnesstech-nextjs-webdevelopment-activity-7300491282722828288-W8_f?utm_source=share&utm_medium=member_android&rcm=ACoAAEhH9pwBnb_2pD0qzNGa2_FKbA_NLpQJfLk',
-    texture: '/textures/project/project1.mp4',
+      'Implemented secure JWT-based authentication, protected routes, and user profile management with workout tracking and progress monitoring features to log activities and visualize fitness gains over time.',
+    href: 'https://trainify-green.vercel.app/',
+    github: 'https://github.com/VishnuDixit23/Trainify',
+    texture: '/assets/trainifyvid.mp4',
     logo: '/assets/Trainify.png',
     logoStyle: {
       backgroundColor: '#2A1816',
@@ -42,28 +52,34 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'Next js',
+        name: 'Next.js',
         path: '/assets/nextjs.svg',
       },
       {
+        id: 3,
+        name: 'Node.js',
+        path: '/assets/nodejs.svg',
+      },
+      {
         id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
+        name: 'MongoDB',
+        path: '/assets/mongodb.svg',
+      },
+      {
+        id: 5,
+        name: 'TailwindCSS',
+        path: '/assets/tailwindcss.png',
       },
     ],
   },
   {
     title: 'JECRC MUN Website',
-    desc: 'Developed and deployed a fully functional, live website for the JECRC MUN (Model United Nations) Club using React.js and Tailwind CSS. The site features event details, team information, and registration capabilities, all wrapped in a responsive and modern UI.',
+    desc: 'Developed and maintained the official website for a large-scale Model United Nations conference, serving as the primary platform for participant registrations and event information.',
     subdesc:
-      'Managed the complete frontend development and deployment process, enhancing the club’s online presence and improving accessibility for participants and members.',
+      'Built responsive and reusable UI components using React.js and Tailwind CSS with Framer Motion animations, ensuring seamless user experience across devices.',
     href: 'https://www.jecrcmun.in/',
-    texture: '/textures/project/project2.mp4',
+    github: 'https://github.com/VishnuDixit23/JECRCMUN25',
+    texture: '/assets/mun2026.mp4',
     logo: '/assets/mun.svg',
     logoStyle: {
       backgroundColor: '#13202F',
@@ -80,34 +96,68 @@ export const myProjects = [
       {
         id: 2,
         name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        path: '/assets/tailwindcss.png',
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
         name: 'Framer Motion',
         path: '/assets/framer.png',
       },
     ],
   },
-{
-    title: 'GTA 6 Landing Page',
-    desc: 'A modern, responsive landing page for GTA 6, featuring dynamic GSAP animations and scroll effects. The hero section reveals the logo through a captivating masking effect as the user scrolls, creating a truly immersive experience.',
+  {
+    title: 'United For Animal Welfare',
+    desc: 'Collaborated with a 3-member development team to design, develop, and deploy the official website for an animal welfare NGO, providing a centralized platform for awareness campaigns, volunteering initiatives, and community engagement.',
     subdesc:
-      'This project showcases advanced frontend skills using React, GSAP, Tailwind CSS, and Vite to build a high-performance, responsive web page.',
+      'Built responsive frontend interfaces using React.js and integrated backend services with Java and SQL, delivering a scalable, user-friendly experience across desktop and mobile devices.',
+    href: 'https://www.unitedforanimalwelfare.org/',
+    github: 'https://github.com/VishnuDixit23/UAW',
+    texture: '/assets/uawvid.mp4',
+    logo: '/assets/uaw-logo.jpeg',
+    logoStyle: {
+      backgroundColor: '#0D2116',
+      border: '0.2px solid #144026',
+      boxShadow: '0px 0px 60px 0px rgba(34, 197, 94, 0.3)',
+    },
+    spotlight: '/assets/spotlight3.png',
+    tags: [
+      {
+        id: 1,
+        name: 'React.js',
+        path: '/assets/react.svg',
+      },
+      {
+        id: 2,
+        name: 'Java',
+        path: '/assets/java.svg',
+      },
+      {
+        id: 3,
+        name: 'SQL',
+        path: '/assets/sql.svg',
+      },
+      {
+        id: 4,
+        name: 'TailwindCSS',
+        path: '/assets/tailwindcss.png',
+      },
+    ],
+  },
+  {
+    title: 'GTA VI Landing Page',
+    desc: 'Engineered a highly interactive GTA VI-inspired landing page featuring advanced GSAP animations, scroll-triggered effects, and immersive visual storytelling.',
+    subdesc:
+      'Implemented dynamic masking and logo reveal animations synchronized with user scrolling to create a cinematic browsing experience using React, GSAP, and Tailwind CSS.',
     href: 'https://gta-6-landing-page-bffc.vercel.app/',
-    texture: '/textures/project/project5.mp4', // assuming you have a video for this
-    logo: '/assets/gta6-logo.jpg', // assuming you have a logo asset for this
+    github: 'https://github.com/VishnuDixit23/gta-6-landing-page',
+    texture: '/textures/project/project5.mp4',
+    logo: '/assets/gta6-logo.jpg',
     logoStyle: {
       backgroundColor: '#2A1816',
       border: '0.2px solid #36201D',
       boxShadow: '0px 0px 60px 0px #AA3C304D',
     },
-    spotlight: '/assets/gta6-spotlight.jpg', // assuming you have a spotlight image for this
+    spotlight: '/assets/spotlight1.png',
     tags: [
       {
         id: 1,
@@ -116,55 +166,18 @@ export const myProjects = [
       },
       {
         id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
+        name: 'GSAP',
+        path: '/assets/gsap.jpg',
       },
       {
         id: 3,
-        name: 'GSAP',
-        path: '/assets/gsap.jpg', // assuming you have a GSAP logo
+        name: 'TailwindCSS',
+        path: '/assets/tailwindcss.png',
       },
       {
         id: 4,
         name: 'Vite',
         path: '/assets/vite.svg',
-      },
-    ],
-  },
-  {
-    title: 'Legacy Portfolio Site',
-    desc: 'My first personal portfolio built to showcase my early web development projects. It served as my introduction to frontend development and public deployment.',
-    subdesc:
-      'Built with Next.js 14, Tailwind CSS, Framer Motion ensures a smooth experience.',
-    href: 'https://portfolio-vd-mu.vercel.app/',
-    texture: '/textures/project/project4.mp4',
-    logo: '/assets/Vishnu Dixit.png',
-    logoStyle: {
-      backgroundColor: '#0E1F38',
-      border: '0.2px solid #0E2D58',
-      boxShadow: '0px 0px 60px 0px #2F67B64D',
-    },
-    spotlight: '/assets/spotlight4.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'Next js',
-        path: '/assets/nextjs.svg',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
       },
     ],
   },
@@ -181,72 +194,109 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
   };
 };
 
+export const workExperience = [
+  {
+    id: 1,
+    role: 'Full Stack Developer',
+    type: 'Freelance',
+    company: 'United For Animal Welfare',
+    period: 'Production Deployment',
+    liveUrl: 'https://www.unitedforanimalwelfare.org/',
+    githubUrl: 'https://github.com/VishnuDixit23/UAW',
+    highlights: [
+      'Collaborated with a 3-member development team to design, develop, and deploy the official website for an animal welfare NGO, providing a centralized platform for awareness campaigns, volunteering initiatives, and community engagement.',
+      'Built responsive frontend interfaces using React.js and integrated backend services with Java and SQL, delivering a scalable and user-friendly experience across desktop and mobile devices.',
+      'Implemented performance optimization and structured content management practices to improve accessibility, responsiveness, and the NGO\'s digital presence, helping expand outreach and public engagement.',
+    ],
+  },
+];
+
+export const education = {
+  degree: 'B.Tech in Artificial Intelligence & Data Science',
+  institution: 'Jaipur Engineering College and Research Centre',
+  status: 'Final-Year Undergraduate',
+  summary: 'Specialized in AI systems, full-stack software development, data algorithms, and building reliable applications that deliver user value.',
+};
+
 export const skills = [
   {
     name: 'React / Next.js',
     icon: '/assets/react.svg',
     level: 'Frontend',
-    animation: 'Wave',
-    description: 'Building responsive SPAs & SSR sites with modern React architecture.',
+    badge: 'frontend',
+    proficiency: 92,
+    description: 'Modern SPA/SSR web architecture, server components, and responsive state management.',
   },
   {
-    name: 'Node.js / Express',
+    name: 'Node.js / Express.js',
     icon: '/assets/nodejs.svg',
     level: 'Backend',
-    animation: 'Run',
-    description: 'REST API development, authentication, and server-side logic.',
+    badge: 'backend',
+    proficiency: 85,
+    description: 'REST API architectures, JWT authentication, server middleware, and microservices.',
   },
   {
-    name: 'Generative AI',
+    name: 'Generative AI & LLMs',
     icon: '/assets/generative.png',
-    level: 'AI Integration',
-    animation: 'Thinking',
-    description: ' Langchain and building tools using LLMs & vector databases.',
+    level: 'AI / LLM',
+    badge: 'ai',
+    proficiency: 88,
+    description: 'LangChain, vector embeddings, Gemini/OpenAI API integrations, and prompt engineering.',
   },
-   {
-    name: 'Agentic AI',
+  {
+    name: 'Agentic AI & RAG',
     icon: '/assets/generative.png',
-    level: 'AI Integration',
-    animation: 'Thinking',
-    description: 'Building AI agents, RAG applications using langgraph, langsmith, langflow.',
+    level: 'AI / LLM',
+    badge: 'ai',
+    proficiency: 85,
+    description: 'Autonomous AI agents, RAG retrieval pipelines, LangGraph workflows, and tool execution.',
   },
   {
     name: 'JavaScript / TypeScript',
     icon: '/assets/js.svg',
     level: 'Language',
-    animation: 'Typing',
-    description: 'Writing modern, type-safe, maintainable code.',
+    badge: 'language',
+    proficiency: 90,
+    description: 'Modern ES6+, asynchronous programming, strict types, and robust full-stack logic.',
   },
-
+  {
+    name: 'Java & Python',
+    icon: '/assets/java.svg',
+    level: 'Language',
+    badge: 'language',
+    proficiency: 82,
+    description: 'Object-oriented programming, backend services, scripting, and data structures.',
+  },
   {
     name: 'THREE.js',
     icon: '/assets/three.svg',
-    level: 'UI/UX & Animation',
-    animation: 'Jump',
-    description: 'Sleek UI designs with interactive 3D & animations.',
+    level: 'UI / 3D',
+    badge: 'animation',
+    proficiency: 78,
+    description: 'Immersive 3D scene rendering, custom shaders, camera rigging, and lighting models.',
   },
-   {
-    name: 'GSAP',
+  {
+    name: 'GSAP & Framer Motion',
     icon: '/assets/gsap.jpg',
-    level: 'Animation Framework',
-    animation: 'Walk',
-    description: 'Scroll-Based animations , Immersive Ui experience..',
+    level: 'UI / 3D',
+    badge: 'animation',
+    proficiency: 85,
+    description: 'Cinematic scroll-triggered timelines, interactive transitions, and smooth physics.',
   },
-   {
-  name: "Tailwind CSS",
-  icon: "assets/tailwindcss.png",
-  level: "UI/UX & Animation",
-  animation: "SlideIn",
-  description: "A utility-first CSS framework for rapidly building custom user interfaces."
-},
-    {
-    name: 'MongoDB ',
+  {
+    name: 'Tailwind CSS',
+    icon: '/assets/tailwindcss.png',
+    level: 'Frontend',
+    badge: 'frontend',
+    proficiency: 92,
+    description: 'Utility-first responsive layouts, modern design tokens, and sleek dark interfaces.',
+  },
+  {
+    name: 'MongoDB & SQL',
     icon: '/assets/mongodb.svg',
     level: 'Database',
-    animation: 'Walk',
-    description: 'Schema design, query optimization, and integrations.',
+    badge: 'database',
+    proficiency: 82,
+    description: 'Relational & NoSQL database schemas, queries, indexing, and data modeling.',
   },
-  
-
- 
 ];
